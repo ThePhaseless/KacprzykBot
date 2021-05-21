@@ -32,6 +32,11 @@ const server = http.createServer((req, res) => {
           res.setHeader('Content-Type', 'text/js');
           fs.createReadStream(filePath).pipe(res);
       }
+      else if (fileExt == '.gif') {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'image/gif');
+        fs.createReadStream(filePath).pipe(res);
+    }
     }
 });
 
