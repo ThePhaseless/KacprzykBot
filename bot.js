@@ -4,12 +4,15 @@
 ///  Bot nie ma na celu obrażania Pana Cezarego
 ///  Jest używany tylko na serwerze Testowym i prywatnej społeczności w celach humorystycznych i edukacyjnych
 ///
+
+
 console.log("Trwa inicjalizacja...");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const lubisz = [
   "Oczywiście",
   "Chyba",
+  "Totalnie",
   "a czy to ważne?",
   "Tak",
   "Nie",
@@ -40,6 +43,7 @@ function los(slowa) {
 
 client.on("ready", () => {
   console.log("o działa");
+  client.user.setDescription("This is a test");
   client.user.setActivity("okolice za oknem", { type: "WATCHING" });
 });
 
