@@ -1,9 +1,9 @@
-///
-///  KacprzykBot
-///  Stworzony na potrzeby edukacyjne
-///  Bot nie ma na celu obrażania Pana Cezarego
-///  Jest używany tylko na serwerze Testowym i prywatnej społeczności w celach humorystycznych i edukacyjnych
-///
+
+//* KacprzykBot
+/// Stworzony na potrzeby edukacyjne
+/// Bot nie ma na celu obrażania Pana Cezarego
+/// Jest używany tylko na serwerze Testowym i prywatnej społeczności w celach humorystycznych i edukacyjnych
+
 
 
 console.log("Trwa inicjalizacja...");
