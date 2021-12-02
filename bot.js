@@ -16,7 +16,8 @@ const matma = [
   "matematykom", "matematykę",
   "matematyką", "matematykami",
   "matematyce", "matematykach",
-  "matematyko", "matematyki"
+  "matematyko", "matematyki",
+  "matma", "matmy", "matme"
 ];
 const wysocki = ["wysocki", "michał", "rzycie"];
 const qopinia = ["lubisz", "jak sądzisz", "czy"];
@@ -108,8 +109,6 @@ client.on("message", msg => {
       //Ile to?
       else if (qileto.some(v => msg.content.toLowerCase().includes(v)))
         msg.channel.send(los(aileto));
-
-
 
       //Reszta
       else
