@@ -48,69 +48,69 @@ client.on("ready", () => {
 
 client.on("message", msg => {
   if (msg.author != "810790057459187733") {
-    if (msg.content.match(/czaruś/i) || msg.content.match(/cezarsiu/i)) {
+    if (msg.content.toLowerCase().match(/czaruś/i) || msg.content.toLowerCase().match(/cezarsiu/i)) {
       //Zachowanie godności
       msg.channel.send("Nie nazywaj mnie tak. Nigdy.");
       //Opinia
     } else if (
-      (msg.content.match(/czarku/i) || msg.content.match(/Czarku/i)) &&
-      (msg.content.match(/lubisz/i) ||
-        msg.content.match(/wiesz/i) ||
-        msg.content.match(/czy/i))
+      msg.content.toLowerCase().match(/czarku/i) &&
+      (msg.content.toLowerCase().match(/lubisz/i) ||
+        msg.content.toLowerCase().match(/wiesz/i) ||
+        msg.content.toLowerCase().match(/czy/i))
     ) {
       if (
         //Wysocki check
-        msg.content.match(/wysocki/i) ||
-        msg.content.match(/michał/i) ||
-        msg.content.match(/michała/i) ||
-        msg.content.match(/wysocki/i) ||
+        msg.content.toLowerCase().match(/wysocki/i) ||
+        msg.content.toLowerCase().match(/michał/i) ||
+        msg.content.toLowerCase().match(/michała/i) ||
+        msg.content.toLowerCase().match(/wysocki/i) ||
         msg.mentions.has("404341103572025361")
       )
         msg.channel.send("Nie.");
       else msg.channel.send(los(lubisz));
     }
     else if (
-      msg.content.match(/co o tym sądzisz/i) ||
-      msg.content.match(/i co/i)
+      msg.content.toLowerCase().match(/co o tym sądzisz/i) ||
+      msg.content.toLowerCase().match(/i co/i)
     )
       msg.channel.send("Śliczne!");
     //Github
     else if (
-      msg.content.match(/czarku pomoc/i) ||
-      msg.content.match(/cezary pomoc/i)
+      msg.content.toLowerCase().match(/czarku pomoc/i) ||
+      msg.content.toLowerCase().match(/cezary pomoc/i)
     ) {
       msg.channel.send("To wszystko co znalazłem:");
       msg.channel.send("https://kacprzykbot.herokuapp.com");
     }
     //Mood Check
     else if (
-      msg.content.match(/jak sie czujesz/i) ||
-      msg.content.match(/jak tam/i) ||
-      msg.content.match(/jak się czujesz/i) ||
-      msg.content.match(/co tam/i)
+      msg.content.toLowerCase().match(/jak sie czujesz/i) ||
+      msg.content.toLowerCase().match(/jak tam/i) ||
+      msg.content.toLowerCase().match(/jak się czujesz/i) ||
+      msg.content.toLowerCase().match(/co tam/i)
     )
       msg.channel.send(los(ct));
     //Emotka dla Matmy
     else if (
-      msg.content.match(/matematyka/i) ||
-      msg.content.match(/matma/i) ||
-      msg.content.match(/matematyki/i) ||
-      msg.content.match(/matmy/i) ||
-      msg.content.match(/matematyke/i) ||
-      msg.content.match(/matme/i) ||
-      msg.content.match(/matematyką/i) ||
-      msg.content.match(/matmą/i)
+      msg.content.toLowerCase().match(/matematyka/i) ||
+      msg.content.toLowerCase().match(/matma/i) ||
+      msg.content.toLowerCase().match(/matematyki/i) ||
+      msg.content.toLowerCase().match(/matmy/i) ||
+      msg.content.toLowerCase().match(/matematyke/i) ||
+      msg.content.toLowerCase().match(/matme/i) ||
+      msg.content.toLowerCase().match(/matematyką/i) ||
+      msg.content.toLowerCase().match(/matmą/i)
     ) {
       msg.react("🥰");
     }
     //Wycoski check2
     else if (
-      msg.content.match(/wysocki/i) ||
-      msg.content.match(/Michał/i) ||
+      msg.content.toLowerCase().match(/wysocki/i) ||
+      msg.content.toLowerCase().match(/Michał/i) ||
       msg.mentions.has("404341103572025361")
     ) {
       msg.channel.send("O, to ten co się matematyki nie uczy");
-    } else if (msg.content.match(/ile to/i) || msg.content.match(/policz/i))
+    } else if (msg.content.toLowerCase().match(/ile to/i) || msg.content.toLowerCase().match(/policz/i))
       msg.channel.send(los(ileto));
     //Opinia2mat
     else if (msg.mentions.has("810790057459187733"))
@@ -118,36 +118,36 @@ client.on("message", msg => {
         "Czas, który spędziłeś na oznaczenie mnie, mogłeś poświęcić na naukę matematyki. Może już Cię ten profil nie interesuje?! Budowa układu wydalniczego żaby jest baaardzo ciekawa..."
       );
     else if (
-      msg.content.match(/nie umiem/i) ||
-      msg.content.match(/nwm/i) ||
-      msg.content.match(/nie wiem/i) ||
-      msg.content.match(/nie pamiętam/i)
+      msg.content.toLowerCase().match(/nie umiem/i) ||
+      msg.content.toLowerCase().match(/nwm/i) ||
+      msg.content.toLowerCase().match(/nie wiem/i) ||
+      msg.content.toLowerCase().match(/nie pamiętam/i)
     )
       msg.channel.send("Siadaj, niedostateczny");
     //Niedostateczny
     else if (
-      msg.content.match(/wzory trygonometryczne/i) ||
-      msg.content.match(/trygonometria/i) ||
-      msg.content.match(/sinus cosinus/i)
+      msg.content.toLowerCase().match(/wzory trygonometryczne/i) ||
+      msg.content.toLowerCase().match(/trygonometria/i) ||
+      msg.content.toLowerCase().match(/sinus cosinus/i)
     ) {
       msg.channel.send("https://www.matemaks.pl/wzory-trygonometryczne.html");
     } else if (
-      msg.content.match(/wzory skróconego mnożenia/i) ||
-      msg.content.match(/wzory mnożenia/i) ||
-      msg.content.match(/mnożenie/i)
+      msg.content.toLowerCase().match(/wzory skróconego mnożenia/i) ||
+      msg.content.toLowerCase().match(/wzory mnożenia/i) ||
+      msg.content.toLowerCase().match(/mnożenie/i)
     ) {
       msg.channel.send(
         "https://www.matemaks.pl/wzory-skroconego-mnozenia.html"
       );
     } else if (
-      msg.content.match(/wzory wieta/i) ||
-      msg.content.match(/wzory vietea/i) ||
-      msg.content.match(/wieta/i)
+      msg.content.toLowerCase().match(/wzory wieta/i) ||
+      msg.content.toLowerCase().match(/wzory vietea/i) ||
+      msg.content.toLowerCase().match(/wieta/i)
     ) {
       msg.channel.send("https://www.matmana6.pl/wzory-vietea");
-    } else if (msg.content == "czarku" || msg.content == "cezary") {
+    } else if (msg.content.toLowerCase() == "czarku" || msg.content.toLowerCase() == "cezary") {
       msg.channel.send(los(slucham));
-    } else if (msg.content.match(/jg/i)) {
+    } else if (msg.content.toLowerCase().match(/jg/i)) {
       msg.channel.send("JG 100% +1 byczq");
     }
   }
