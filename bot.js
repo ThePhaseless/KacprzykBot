@@ -43,7 +43,6 @@ function los(slowa) {
 
 client.on("ready", () => {
   console.log("o działa");
-  client.user.setDescription("This is a test");
   client.user.setActivity("okolice za oknem", { type: "WATCHING" });
 });
 
@@ -54,7 +53,7 @@ client.on("message", msg => {
       msg.channel.send("Nie nazywaj mnie tak. Nigdy.");
       //Opinia
     } else if (
-      msg.content.match(/czarku/i) &&
+      (msg.content.match(/czarku/i) || msg.content.match(/Czarku/i)) &&
       (msg.content.match(/lubisz/i) ||
         msg.content.match(/wiesz/i) ||
         msg.content.match(/czy/i))
@@ -68,53 +67,53 @@ client.on("message", msg => {
         msg.mentions.has("404341103572025361")
       )
         msg.channel.send("Nie.");
-        else msg.channel.send(los(lubisz));
-      }
-      else if (
-        msg.content.match(/co o tym sądzisz/i) ||
-        msg.content.match(/i co/i)
-      )
-        msg.channel.send("Śliczne!");
-      //Github
-      else if (
-        msg.content.match(/czarku pomoc/i) ||
-        msg.content.match(/cezary pomoc/i)
-      ) {
-        msg.channel.send("To wszystko co znalazłem:");
-        msg.channel.send("https://kacprzykbot.herokuapp.com");
-      }
-      //Mood Check
-      else if (
-        msg.content.match(/jak sie czujesz/i) ||
-        msg.content.match(/jak tam/i) ||
-        msg.content.match(/jak się czujesz/i) ||
-        msg.content.match(/co tam/i)
-      )
-        msg.channel.send(los(ct));
-      //Emotka dla Matmy
-      else if (
-        msg.content.match(/matematyka/i) ||
-        msg.content.match(/matma/i) ||
-        msg.content.match(/matematyki/i) ||
-        msg.content.match(/matmy/i) ||
-        msg.content.match(/matematyke/i) ||
-        msg.content.match(/matme/i) ||
-        msg.content.match(/matematyką/i) ||
-        msg.content.match(/matmą/i)
-      ) {
-        msg.react("🥰");
-      }
-      //Wycoski check2
-      else if (
-        msg.content.match(/wysocki/i) ||
-        msg.content.match(/Michał/i) ||
-        msg.mentions.has("404341103572025361")
-      ) {
-        msg.channel.send("O, to ten co się matematyki nie uczy");
-      } else if (msg.content.match(/ile to/i) || msg.content.match(/policz/i))
-        msg.channel.send(los(ileto));
-      //Opinia2mat
-      else if (msg.mentions.has("810790057459187733"))
+      else msg.channel.send(los(lubisz));
+    }
+    else if (
+      msg.content.match(/co o tym sądzisz/i) ||
+      msg.content.match(/i co/i)
+    )
+      msg.channel.send("Śliczne!");
+    //Github
+    else if (
+      msg.content.match(/czarku pomoc/i) ||
+      msg.content.match(/cezary pomoc/i)
+    ) {
+      msg.channel.send("To wszystko co znalazłem:");
+      msg.channel.send("https://kacprzykbot.herokuapp.com");
+    }
+    //Mood Check
+    else if (
+      msg.content.match(/jak sie czujesz/i) ||
+      msg.content.match(/jak tam/i) ||
+      msg.content.match(/jak się czujesz/i) ||
+      msg.content.match(/co tam/i)
+    )
+      msg.channel.send(los(ct));
+    //Emotka dla Matmy
+    else if (
+      msg.content.match(/matematyka/i) ||
+      msg.content.match(/matma/i) ||
+      msg.content.match(/matematyki/i) ||
+      msg.content.match(/matmy/i) ||
+      msg.content.match(/matematyke/i) ||
+      msg.content.match(/matme/i) ||
+      msg.content.match(/matematyką/i) ||
+      msg.content.match(/matmą/i)
+    ) {
+      msg.react("🥰");
+    }
+    //Wycoski check2
+    else if (
+      msg.content.match(/wysocki/i) ||
+      msg.content.match(/Michał/i) ||
+      msg.mentions.has("404341103572025361")
+    ) {
+      msg.channel.send("O, to ten co się matematyki nie uczy");
+    } else if (msg.content.match(/ile to/i) || msg.content.match(/policz/i))
+      msg.channel.send(los(ileto));
+    //Opinia2mat
+    else if (msg.mentions.has("810790057459187733"))
       msg.channel.send(
         "Czas, który spędziłeś na oznaczenie mnie, mogłeś poświęcić na naukę matematyki. Może już Cię ten profil nie interesuje?! Budowa układu wydalniczego żaby jest baaardzo ciekawa..."
       );
@@ -146,7 +145,7 @@ client.on("message", msg => {
       msg.content.match(/wieta/i)
     ) {
       msg.channel.send("https://www.matmana6.pl/wzory-vietea");
-    } else if (msg.content=="czarku" || msg.content=="cezary") {
+    } else if (msg.content == "czarku" || msg.content == "cezary") {
       msg.channel.send(los(slucham));
     } else if (msg.content.match(/jg/i)) {
       msg.channel.send("JG 100% +1 byczq");
